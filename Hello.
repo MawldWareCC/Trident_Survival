@@ -1,1 +1,9 @@
-	Oldfunction = nil Oldfunction = hookfunction(getrenv()._G.modules.FPS.EquipItem,function(...) local Args = {...}  local p2 = Args[1]	 _G.WEAPONID=p2.id	return Oldfunction(...)  end)
+	-- Broken
+	local Oldfunction
+	Oldfunction = nil Oldfunction = hookfunction(getrenv()._G.modules.FPS.EquipItem,function(...)
+		local Args = {...} 
+		local p2 = Args[1]	 
+		_G.WEAPONID=p2.id 
+		--	rconsolewarn(p2.id) 
+		return Oldfunction(...) 
+	end)
